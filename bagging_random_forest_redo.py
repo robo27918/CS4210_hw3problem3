@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
+# AUTHOR: Roberto Toribio
+# FILENAME: Bagging Random Forest
 # SPECIFICATION: description of the program
 # FOR: CS 4210- Assignment #3
 # TIME SPENT: how long it took you to complete the assignment
@@ -111,14 +111,13 @@ clf.fit(X_training,y_training)
 rf_correct_cnt = 0
 for test_sample in dbTest:
    class_predicted_rf = clf.predict([test_sample[0:64]])[0]
-   #print("class predicted = ", class_predicted_rf, "\tactual class:",test_sample[64])
+  
    #compare the Random Forest prediction for each test sample with the ground truth label to calculate its accuracy
    #--> add your Python code here
-   #print("boolean = ",class_predicted_rf == int(test_sample[64]) )
+   
    if int(class_predicted_rf) == int(test_sample[64]):
       rf_correct_cnt +=1
-#print("type of class_predicted: ",type(class_predicted_rf))
-#print("type of class lable: ",type(test_sample[64]))
+
 accuracy = rf_correct_cnt/ len(dbTest)
 #printing Random Forest accuracy here
 print("Random Forest accuracy: " + str(accuracy))
